@@ -1,0 +1,21 @@
+version: '3.6'
+services:
+  server:
+    container_name: devstroke-server
+    env_file:
+    - .env
+    image: 'devstroke-server'
+    build:
+      context: .
+      dockerfile: 'docker/Dockerfile'
+      target: dev-stage
+      args:
+        UID: $UID
+        GID: $GID
+    tty: true
+    volumes:
+    - '.:/app'
+    ports:
+    - 3800:3000
+    user: node
+    command: 'sh' # -c "yarn install && yarn run start --host 0.0.0.0 --disable-host-check"'
