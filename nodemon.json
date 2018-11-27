@@ -1,0 +1,10 @@
+{
+  "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules"],
+  "watch": ["src"],
+  "exec": "yarn run start",
+  "ext": "ts",
+  "signal": "SIGTERM",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

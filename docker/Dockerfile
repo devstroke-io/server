@@ -10,6 +10,8 @@ FROM node:10-alpine AS prepare-stage
 
 # COPY package*.json yarn.lock /app/
 
+# RUN apk add --no-cache python make g++
+
 # RUN yarn install
 
 
